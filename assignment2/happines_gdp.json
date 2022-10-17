@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 300,
+    "title": "Does money bring happiness?",
+    "data": {
+      "url": "region_2020.csv"
+    },
+    "params": [
+      {
+        "name": "Region",
+        "select": {"type": "point", "fields": ["Regional"]},
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Central and Eastern Europe",
+            "Commonwealth of Independent States",
+            "East Asia",
+            "Latin America and Caribbean",
+            "Middle East and North Africa",
+            "North America and ANZ",
+            "South Asia",
+            "Southeast Asia",
+            "Sub-Saharan Africa",
+            "Western Europe"
+          ]
+        }
+      },
+      {
+        "name": "Gen",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0.1,
+          "max": 0.5,
+          "step": 0.1,
+          "name": "Minimum Generosity: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Explained_Generosity > Gen"}
+    ],
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "Logged GDP per capita",
+        "type": "quantitative",
+        "title": "GDP per Capita",
+        "axis": {"tickCount": 4},
+        "scale": {"type": "linear", "domain": [2, 12]}
+      },
+      "y": {
+        "field": "score",
+        "type": "quantitative",
+        "title": "Happiness Score",
+        "axis": {"tickCount": 4},
+        "scale": {"domain": [2, 12]}
+      },
+      "color": {"field": "Regional", "type": "nominal", "legend": { "labelFontSize": 8}},
+      "opacity": {"condition": {"param": "Region", "value": 0.7}, "value": 0.1},
+      "size": {
+        "field": "Explained_Generosity",
+        "type": "quantitative",
+        "title": "Generosity",
+        "legend": { "labelFontSize": 8}
+      },
+      "tooltip": [
+        {"field": "Country name", "type": "nominal", "title": "Country Name"},
+        {"field": "score", "type": "quantitative", "format": ".2f", "title": "Happiness Score"},
+        {"field": "Logged GDP per capita", "type": "quantitative", "format": ".2f"}
+      ]
+    }
+  }
+  

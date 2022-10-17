@@ -1,0 +1,28 @@
+* {
+    font-family: 'Oxygen', sans-serif;
+    line-height: 1.5;
+}
+
+.main {
+    width: 770px;
+    height: 3000px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
+.p{
+    text-size-adjust: 16;
+}
+
+#bubble{
+    float: left;    
+    margin: 0 0 0 15px;
+}
+
+
+body {
+    background-color: #CAD5E3;
+}
+
