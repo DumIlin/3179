@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h1>Word Happiness Rank in 2020</h1>
+        </div>
+        <br>
+
+        
+        <div class="ps">
+            <div class="p1">
+                <p>The visualisations below use the data reported by the "World Happiness Report". The Happiness Score
+                    is based on the Gallup World Poll (GWP), which asks the main life evaluation questions. Following
+                    the poll,
+                    the scores are computed by averaging the responses to those questions. The GWP uses the Cantril
+                    Ladder.</p>
+            </div>
+        <div>
+
+        <div class="ps">
+            <div id="hap_map"></div>
+            <h1></h1>
+            <p>
+                This choropleth map uses continuous color encoding to inscripe the happpiness score of each
+                country. A lower score is associated with a lifgter color, while a higher score is associated with a darker
+                color. For the countries in grey there was no data collected.
+            </p>
+        </div>
+
+        <div class = "ps">
+            <br>
+            <div id="cou"></div>
+            <h3>Locations</h3>
+            <p> 153 out of 195 countries were considered. Furthermore, these countries defined 10 regional indicators: Central and Eastern Europe,
+                Commonwealth of Independent States, East Asia, Latin America and Caribbean, Middle East and North Africa, North America and ANZ, South Asia, Southeast Asia,
+                Sub-Saharan Africa and Western Europe,
+            </p>
+        </div>   
+        <div class="ps"></div>
+            <h2> Factors</h2>
+            <p>In order to understand what defines the happiness of each country,
+                it is relevant to inspect factors that could influence it. For instance, economic production, social
+                support, life expectancy, freedom, absence of corruption, and generosity.
+
+            </p>
+        </div>     
+
+        <h1></h1>
+        <div class="ps">
+            <div id="bubble" class="vis-container"></div>
+            <div class="p2">
+                <h3>Economic Situation and Generosity</h3>
+                    <p>A factor that could imapact happiness is the economic situation of an individual. The GDP per capita
+                        indirectly indicates the income of an average individual. Interestingly, 
+                        the bubble chart displays that countries with higher GDP per capita appeared to be happier. Generosity is represented 
+                        by the bubble size and it does not appear to be a significant influencer.
+                    </p>
+            </div>
+        </div>
+
+        <br>
+        <div class="ps">
+            <br>
+            <div id="hap_social" class = "vis-container"></div>
+            <div class="p2">
+                <h3>Governamental Social Support</h3>
+                    <p>The social support offered by the government can be another factor thats imapacts happiness. 
+                        This support can range from governamental aid for people suffering financially to maternity leave rights and 
+                        education funding. As seen in the scatter plot, countries with more social support tend to be happier.
+                    </p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="ps"></div>
+        <h2> Ranks</h2>
+            <p>
+                Given that the "World Happiness Report" presents the scores for all the countries and regional indicators,
+                a ranking for each can be presented. 
+            </p>
+            <div id="bar_region"></div>
+            <h3>Regional</h3>
+            <p> 
+                Consistent with the other charts, "North Amrica and ANZ" and "Wester Europe" apppear to 
+                have the countries with the happiest people. While "South Asia" and "Sub-Saharan Africa" are among the last.
+                Although, the factors presented could play a part in this ranking, there might me other reasons for he order of this rank.
+            </p>
+        </div>  
+
+        <div class="ps">
+            <br>
+            <h3>Countries</h3>
+            <div id="top"></div>
+            <p>
+                Consistents with the other charts and the regional ranking, countries from the 
+                "North Amrica and ANZ" and "Wester Europe" regions are shown to have the happiest people.
+                These coutries also were the ones who had the highest GDP per capita and governamental social support.
+            </p>
+        </div>
+        <br>
+        <div class="ps">
+            <h1>
+                <br>
+            </h1>
+        </div>
+
+    <div class="ps">
+        <small>The data useed was taken from https://www.kaggle.com/datasets/mathurinache/world-happiness-report?select=2020.csv</small>
+    </div>
+
+    </div>
+
+    </div>
+</body>
+
+</html>

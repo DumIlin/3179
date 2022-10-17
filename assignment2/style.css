@@ -1,0 +1,54 @@
+* {
+    font-family: 'Oxygen', sans-serif;
+    line-height: 1.5;
+}
+
+.main {
+    width: 850px;
+    height: 3050px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
+.ps{
+    text-size-adjust: 16;
+    margin: auto;
+    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#bubble{
+    float: left;    
+    
+}
+#hap_social{
+    float: left;    
+    
+}
+#cou{
+    float: left;    
+    
+}
+
+#bar_region{
+    float: right;
+}
+
+#top{
+    float: right;
+}
+
+.p{
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+body {
+    background-color: antiquewhite;
+}
+

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 215,
+  "height": 200,
+  "title": {"text": "Happiness and Social Support"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/DumIlin/3179/main/assignment2/2020.csv"
+  },
+  "params": [
+    {
+      "name": "Select",
+      "select": {"type": "point", "fields": ["Regional"]},
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Central and Eastern Europe",
+          "Commonwealth of Independent States",
+          "East Asia",
+          "Latin America and Caribbean",
+          "Middle East and North Africa",
+          "North America and ANZ",
+          "South Asia",
+          "Southeast Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ]
+      }
+    },
+    {
+    "name": "size",
+    "value": 25,
+    "bind": {"input": "range", "min":5, "max": 50, "step": 5}
+  },
+  {
+    "name": "strokeWidth",
+    "value": 2,
+    "bind": {"input": "range", "min": 0, "max": 10, "step": 0.5}
+  }
+  ],
+  "mark":{ "type": "point",
+  "size": {"expr": "size"},
+  "strokeWidth": {"expr": "strokeWidth"}
+  },
+  "encoding": {
+    "x": {"field": "score", "type": "quantitative", "title": "Happiness score", "scale": {"type": "linear", "domain": [0, 9]}, "axis": {"tickCount": 4}},
+    "y": {"field": "Social support", "type": "quantitative", "scale": {"domain": [0, 1]}, "axis": {"tickCount": 4}},
+    "color": {"field": "Regional", "type": "nominal", "title" : "Region", "legend": { "labelFontSize": 8}, "scale": {"scheme": "tableau20"}},
+      "opacity": {"condition": {"param": "Select", "value": 0.7}, "value": 0.1},
+    "tooltip": [
+      {
+        "field": "score",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Happiness score"
+      },
+      {"field": "Country name", "type": "nominal", "title": "Country Name"}
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":250,
+    "title": { "text": "Top 10 Happiest Countries" },
+    "data": {
+    "url":
+    "https://raw.githubusercontent.com/DumIlin/3179/main/assignment2/2020.csv"
+    },
+    "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "score", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 10"
+    }
+  ],
+    "mark": "bar",
+    "encoding": {
+    "x": { "field": "score", "type": "quantitative", "title":"Happiness score"},
+    "y": { "field": "Country name", "type": "nominal", "title": "", "sort": "-x" },
+     "tooltip": [{"field": "score", "type": "quantitative", "format": ".2f", "title": "Happiness score"},
+     {"field": "Regional", "type": "nominal", "title": "Region"}]
+    }
+    }
+    
