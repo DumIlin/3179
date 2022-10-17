@@ -4,7 +4,7 @@
     "height": 300,
     "title": "Does money bring happiness?",
     "data": {
-      "url": "region_2020.csv"
+      "url": "https://raw.githubusercontent.com/DumIlin/3179/main/assignment2/2020.csv"
     },
     "params": [
       {
